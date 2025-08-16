@@ -1,0 +1,18 @@
+# railway.toml
+[project]
+name = "arc-home"
+description = "ARC Deck & Fence Website - Flask backend + frontend"
+root = "."
+
+[services.web]
+name = "web"
+type = "web"
+env = "python"
+build = "pip install -r requirements.txt"
+start = "gunicorn app:app"
+
+[env]
+# Temporary/test values, update in Railway dashboard for production
+MAIL_USERNAME = "dummy@example.com"
+MAIL_PASSWORD = "dummy"
+SECRET_KEY = "supersecretkey"
