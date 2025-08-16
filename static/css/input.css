@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url("../images/tbg.jpeg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: "Inter", sans-serif;
+  color: rgb(0, 12, 8);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -ms-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  -webkit-font-variant-ligatures: none;
+  -moz-font-variant-ligatures: none;
+  -ms-font-variant-ligatures: none;
+  font-variant-ligatures: none;
+  -webkit-font-variant-numeric: tabular-nums;
+  -moz-font-variant-numeric: tabular-nums;
+  -ms-font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums;
+
+  @apply h-fit w-full inline-flex content-start flex-col min-w-sm;
+}
+
+.header {
+  @apply bg-slate-200/50 w-full h-25 flex flex-row items-center px-4 justify-between px-4 backdrop-blur-2xl p-9 sticky top-0 z-50;
+}
+
+.header__logo {
+  @apply w-25 inline-flex relative;
+}
+.header__nav {
+  @apply w-75 inline-flex justify-evenly items-center;
+}
+.header__nav__item {
+  @apply inline-flex relative w-25 text-center text-slate-800 hover:text-slate-900 transition-colors duration-300;
+}
+.banner {
+  @apply w-dvw h-15 flex relative flex-row items-center justify-center px-4 bg-cyan-950/50 backdrop-blur-2xl p-10;
+}
+.banner__contact {
+  @apply w-115 flex flex-row items-center justify-evenly relative p-5 min-w-83;
+}
+
+.banner__socials {
+  @apply w-100 flex relative flex-row items-center justify-evenly p-5 min-w-25;
+}
+.main {
+  @apply w-full h-screen flex relative flex-col items-center justify-start px-4 py-10;
+}

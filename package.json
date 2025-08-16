@@ -1,0 +1,14 @@
+{
+  "name": "arc1",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "daisyui": "^5.0.50",
+    "tailwindcss": "^4.1.12"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

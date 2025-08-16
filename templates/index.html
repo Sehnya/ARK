@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARC HOME</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body data-theme="light">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="max-w-lg mx-auto mt-4">
+      {% for category, message in messages %}
+        <div class="alert {{ 'alert-success' if category == 'success' else 'alert-error' }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+    <div class="header">
+      <div class="header__logo">
+        <img
+          src="{{ url_for('static', filename='images/ARC-LOGO.png') }}"
+          alt="ARC DECK AND FENCE"
+        />
+      </div>
+      <div class="header__nav  text-cyan-950">
+  <a class="header__nav__item" href="#services"><p>Services</p></a>
+  <a class="header__nav__item" href="#about"><p>About</p></a>
+  <a class="header__nav__item" href="#contact"><p>Contact</p></a>
+</div>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="banner__contact text-white font-semibold">
+        <p>Get in touch with us today:</p>
+        <p>770-230-6214</p>
+      </div>
+      
+    </div>
+    <div class="main">
+      <!-- Hero -->
+      <section
+        class="hero min-h-[80vh] bg-base-200"
+        style="background-image: url(&quot;/static/images/fenced-yard.jpeg&quot;)"
+      >
+        <div class="hero-overlay bg-opacity-50"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-lg">
+            <h1 class="text-5xl font-bold">Build Your Dream Yard</h1>
+            <p class="py-6">
+              Decks and fences designed with care.
+            </p>
+            <a href="#contact" class="btn bg-cyan-950 text-white hover:bg-cyan-700">Request a Free Quote</a>
+          </div>
+        </div>
+      </section>
+    </div>
+   <section id="services" class="py-16 px-6">
+  <h2 class="text-3xl font-bold text-center mb-10  text-cyan-950">Our Services</h2>
+  <div class="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
+    
+    <!-- Decks -->
+    <div class="card bg-base-100 shadow-xl m-0 p-0 flex flex-col  text-cyan-950">
+      <figure class="h-48 overflow-hidden">
+        <img src="/static/images/deck.jpeg" alt="Decks" class="w-full h-full object-cover" />
+      </figure>
+      <div class="card-body flex-1 flex flex-col items-center text-center">
+        <h3 class="card-title">Decks</h3>
+        <p class="flex-1">
+          Beautiful, durable decks designed for family gatherings and lasting memories.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Fences -->
+    <div class="card bg-base-100 shadow-xl m-0 p-0 flex flex-col text-cyan-950 ">
+      <figure class="h-48 overflow-hidden">
+        <img src="/static/images/fencing.png" alt="Fences" class="w-full h-full object-cover" />
+      </figure>
+      <div class="card-body flex-1 flex flex-col items-center text-center">
+        <h3 class="card-title">Fences</h3>
+        <p class="flex-1">
+          Secure, stylish fencing crafted with integrity to protect what matters most.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- About -->
+ <section id="about" class="py-16 px-6 text-white bg-cyan-950/50 text-shadow-md">
+  <h2 class="text-3xl font-bold text-center mb-10">About Us</h2>
+  <div class="max-w-3xl mx-auto text-center space-y-6">
+    <p>
+      For over 5 years, <strong>ARC</strong> has been dedicated to transforming ordinary backyards into extraordinary outdoor living spaces. From custom decks and sturdy fences to beautifully designed landscapes, our work is guided by one simple principle: every project is a reflection of our values and our commitment to the people we serve.
+    </p>
+    <p>
+      At ARC, we believe building is more than just construction — it’s about creating spaces where families gather, friendships grow, and communities thrive. Our team takes pride in combining <em>God-Standard craftsmanship</em> with a genuine dedication to customer satisfaction. Each project is an opportunity to build not only quality structures, but also trust and long-lasting relationships with our clients.
+    </p>
+    <blockquote class="italic font-semibold">“Crafted with integrity. Built on faith. Focused on you.”</blockquote>
+    <p>
+      Looking ahead, our goal is to remain the trusted partner for homeowners across the region — a company rooted in faith, driven by quality, and committed to the communities we call home.
+    </p>
+  </div>
+</section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 px-6 bg-base-200">
+    <h2 class="text-3xl font-bold text-center mb-10 text-orange-950">Request a Free Quote</h2>
+    <form method="POST" action="/contact" class="max-w-lg mx-auto space-y-4">
+  <input type="text" name="name" placeholder="Name" class="input input-bordered w-full" required />
+  <input type="email" name="email" placeholder="Email" class="input input-bordered w-full" required />
+  <input type="text" name="phone" placeholder="Phone" class="input input-bordered w-full" required />
+  <textarea name="details" class="textarea textarea-bordered w-full" placeholder="Your project details" required></textarea>
+  <button type="submit" class="btn bg-cyan-950 text-white hover:bg-cyan-700 w-full">Submit</button>
+</form>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer footer-center p-10 bg-base-300  text-cyan-950">
+    <aside>
+      <p >© 2025 ARC DECK AND FENCE. — All rights reserved</p>
+    </aside>
+  </footer>
+</body>
+  </body>
+</html>
